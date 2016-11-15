@@ -10,11 +10,18 @@ function addItem(){
     iconClose.classList.add("glyphicon");
     iconClose.classList.add("glyphicon-remove");
   var itemName = document.createTextNode(input);
+  btnClose.addEventListener("click", removeParentListItem);
   btnClose.appendChild(iconClose);
   item.appendChild(btnClose);
   item.appendChild(itemName);
   list.appendChild(item);
   document.getElementById("newItem").value = "";
+}
+
+function removeParentListItem(){
+  var mom = this.parentNode;
+  var grandma = mom.parentNode;
+  grandma.removeChild(mom);
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
