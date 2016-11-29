@@ -34,6 +34,17 @@ function removeParentListItem(){
   console.log(myList);
 }
 
+function saveList(){
+  var listcopy = myList.toString();
+  console.log(listcopy);
+  setCookie("yourlist", listcopy, 2);
+  console.log(getCookie("mylist"));
+}
+
+function clearList(){
+  document.getElementById("listDisplay").innerHTML = "";
+}
+
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
