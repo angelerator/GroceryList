@@ -2,7 +2,7 @@ var myList = [];
 
 function addItem(){
   var input = document.getElementById("newItem").value;
-  if(myList.indexOf(input) == -1){
+  if(myList.indexOf(input) == -1 && input != ""){
     myList.push(input);
     console.log(myList);
     var list = document.getElementById("listDisplay");
@@ -43,6 +43,7 @@ function saveList(){
 
 function clearList(){
   document.getElementById("listDisplay").innerHTML = "";
+  myList = [];
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
