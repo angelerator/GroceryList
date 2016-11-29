@@ -37,8 +37,8 @@ function removeParentListItem(){
 function saveList(){
   var listcopy = myList.toString();
   console.log(listcopy);
-  setCookie("yourlist", listcopy, 2);
-  console.log(getCookie("mylist"));
+  setCookie("yourlist", listcopy, 1);
+  console.log(getCookie("yourlist"));
 }
 
 function clearList(){
