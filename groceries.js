@@ -1,3 +1,4 @@
+window.onload = loadCookieList;
 var myList = [];
 
 function addItem(){
@@ -48,6 +49,15 @@ function displayitem(input){
     list.appendChild(item);
     document.getElementById("newItem").value = "";
  }
+}
+
+function loadCookieList(){
+  var yourcookie = getCookie("yourlist");
+  var arrayCookie = [];
+  arrayCookie = yourcookie.split(",");
+  for(var i=0; i<arrayCookie.length; i++){
+    displayitem(arrayCookie[i]);
+  }
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
