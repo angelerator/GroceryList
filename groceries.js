@@ -2,26 +2,7 @@ var myList = [];
 
 function addItem(){
   var input = document.getElementById("newItem").value;
-  if(myList.indexOf(input) == -1 && input != ""){
-    myList.push(input);
-    console.log(myList);
-    var list = document.getElementById("listDisplay");
-    var item = document.createElement("li");
-    var btnClose = document.createElement("button");
-      btnClose.classList.add("btn");
-      btnClose.classList.add("btn-danger");
-      btnClose.classList.add("btn-xs");
-    var iconClose = document.createElement("span");
-      iconClose.classList.add("glyphicon");
-      iconClose.classList.add("glyphicon-remove");
-    var itemName = document.createTextNode(input);
-    btnClose.addEventListener("click", removeParentListItem);
-    btnClose.appendChild(iconClose);
-    item.appendChild(btnClose);
-    item.appendChild(itemName);
-    list.appendChild(item);
-    document.getElementById("newItem").value = "";
- }
+  displayitem(input);
 }
 
 function removeParentListItem(){
@@ -44,6 +25,29 @@ function saveList(){
 function clearList(){
   document.getElementById("listDisplay").innerHTML = "";
   myList = [];
+}
+
+function displayitem(input){
+  if(myList.indexOf(input) == -1 && input != ""){
+    myList.push(input);
+    console.log(myList);
+    var list = document.getElementById("listDisplay");
+    var item = document.createElement("li");
+    var btnClose = document.createElement("button");
+      btnClose.classList.add("btn");
+      btnClose.classList.add("btn-danger");
+      btnClose.classList.add("btn-xs");
+    var iconClose = document.createElement("span");
+      iconClose.classList.add("glyphicon");
+      iconClose.classList.add("glyphicon-remove");
+    var itemName = document.createTextNode(input);
+    btnClose.addEventListener("click", removeParentListItem);
+    btnClose.appendChild(iconClose);
+    item.appendChild(btnClose);
+    item.appendChild(itemName);
+    list.appendChild(item);
+    document.getElementById("newItem").value = "";
+ }
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
